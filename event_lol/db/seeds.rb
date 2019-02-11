@@ -22,7 +22,10 @@ puts "Attendances destroyed\n"
 end
 
 10.times do 
-	Event.create(start_date: Faker::Date.forward(203), duration: 50, title: Faker::Company.industry, description: Faker::Hacker.say_something_smart, price: 40, location: Faker::Address.city, admin_id:User.all.sample)
+	Event.create!(start_date: Faker::Date.forward(203), duration: 50, title: Faker::Company.industry, description: Faker::Hacker.say_something_smart, price: 40, location: Faker::Address.city, admin:User.all.sample)
 
 end
-puts "deux"
+
+10.times do 
+	Attendance.create!(stripe_customer_id: Faker::BreakingBad.character, user:User.all.sample, event:Event.all.sample)
+end
