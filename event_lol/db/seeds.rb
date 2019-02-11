@@ -22,7 +22,7 @@ puts "Attendances destroyed\n"
 end
 
 10.times do 
-	Event.create!(start_date: Faker::Date.forward(203), duration: 50, title: Faker::Company.industry, description: Faker::Hacker.say_something_smart, price: 40, location: Faker::Address.city, admin:User.all.sample)
+	Event.create!(start_date: Faker::Date.forward(203), duration: 50, title: Faker::Pokemon.name, description: Faker::Hacker.say_something_smart, price: 40, location: Faker::Address.city, admin:User.all.sample)
 
 end
 

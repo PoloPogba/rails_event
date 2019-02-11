@@ -4,7 +4,7 @@ class Event < ApplicationRecord
     validate :test_start_date
     validates :duration, presence:true, numericality: { only_integer: true }
     validate :test_duration
-    validates :title, presence: true, uniqueness: true, length: {minimum: 5, maximum: 140}
+    validates :title, presence: true, length: {minimum: 5, maximum: 140}
     validates :description, presence: true, length: {minimum: 20, maximum: 1000}
     validates :price, presence: true, numericality: { only_integer: true }, :inclusion => 1..1000
     validates :location, presence: true
