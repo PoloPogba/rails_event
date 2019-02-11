@@ -5,3 +5,24 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+puts "Destroying users"
+User.destroy_all
+puts "Users destroyed\n"
+puts "Destroying events"
+Event.destroy_all
+puts "Events destroyed\n"
+puts "Destroying Attendances"
+Attendance.destroy_all
+puts "Attendances destroyed\n"
+
+10.times do 
+	User.create(email: Faker::Internet.email, first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, description: Faker::BojackHorseman.quote)
+end
+
+10.times do 
+	Event.create(start_date: Faker::Date.forward(203), duration: 50, title: Faker::Company.industry, description: Faker::Hacker.say_something_smart, price: 40, location: Faker::Address.city, admin_id:User.all.sample)
+
+end
+puts "deux"
